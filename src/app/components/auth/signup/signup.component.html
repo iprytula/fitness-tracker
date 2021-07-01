@@ -16,7 +16,7 @@
                 required
               />
               <mat-error *ngIf="signUpForm.get('email')?.errors?.required">This field is required</mat-error>
-              <mat-error *ngIf="signUpForm.get('email')?.errors?.invalidEmail">Please enter a valid email adress</mat-error>
+              <mat-error *ngIf="signUpForm.get('email')?.errors?.email">Please enter a valid email adress</mat-error>
             </mat-form-field>
           </div>
           <div class="row mt-1">
@@ -53,9 +53,7 @@
               mat-raised-button
               type="submit"
               color="primary"
-            >
-              Submit
-            </button>
+            >Submit</button>
           </div>
         </form>
       </mat-card-content>

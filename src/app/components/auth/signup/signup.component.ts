@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      email: ['', this.emailValidator],
+      email: ['', Validators.email],
       password: ['', [Validators.minLength(6)]],
       confirmedPassword: ['', [Validators.required, this.passwordMatchValidator]]
     });
@@ -28,18 +28,18 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  private emailValidator(control: FormControl): ValidationErrors | null {
-    if (control.value) {
-      const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // private emailValidator(control: FormControl): ValidationErrors | null {
+  //   if (control.value) {
+  //     const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-      if (!reg.test(control.value)) {
-        return { invalidEmail: true }
-      } else {
-        return null;
-      }
-    }
-    return null;
-  }
+  //     if (!reg.test(control.value)) {
+  //       return { invalidEmail: true }
+  //     } else {
+  //       return null;
+  //     }
+  //   }
+  //   return null;
+  // }
 
   private passwordMatchValidator(control: FormControl): ValidationErrors | null {
     if (control.value) {
