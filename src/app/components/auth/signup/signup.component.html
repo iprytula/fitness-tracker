@@ -1,5 +1,64 @@
 <section>
-  <form>
-
-  </form>
+  <div class="mx-auto mt-5 px-3 form-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Sign Up</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                matInput
+                placeholder="pat@example.com"
+                required
+              />
+              <mat-error *ngIf="signUpForm.get('email')?.errors?.required">This field is required</mat-error>
+              <mat-error *ngIf="signUpForm.get('email')?.errors?.invalidEmail">Please enter a valid email adress</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row mt-1">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input
+                formControlName="password"
+                matInput
+                type="password"
+                placeholder="min 6 symbols"
+                required
+              />
+              <mat-error *ngIf="signUpForm.get('password')?.errors?.required">This field is required</mat-error>
+              <mat-error *ngIf="signUpForm.get('password')?.errors?.minlength">Enter min 6 symbols</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row mt-1">
+            <mat-form-field appearance="fill">
+              <mat-label>Repeat password</mat-label>
+              <input
+                formControlName="confirmedPassword"
+                matInput
+                type="password"
+                placeholder="min 6 symbols"
+                required
+              />
+              <mat-error *ngIf="signUpForm.get('confirmedPassword')?.errors?.required">This field is required</mat-error>
+              <mat-error *ngIf="signUpForm.get('confirmedPassword')?.errors?.passNotMutch">Password is not match</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <button
+              class="w-50 d-inline-block mx-auto mt-2"
+              mat-raised-button
+              type="submit"
+              color="primary"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </section>
