@@ -12,7 +12,8 @@ import { CurrentTrainingComponent } from './components/training/current-training
 import { NewTrainingComponent } from './components/training/new-training/new-training.component';
 import { PastTrainingsComponent } from './components/training/past-trainings/past-trainings.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

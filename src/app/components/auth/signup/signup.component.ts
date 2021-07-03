@@ -13,13 +13,18 @@ export class SignupComponent implements OnInit {
   ) { }
 
   signUpForm!: FormGroup;
+  maxDate!: Date;
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
       email: ['', Validators.email],
+      birthDate: [null],
       password: ['', [Validators.minLength(6)]],
-      confirmedPassword: ['', [Validators.required, this.passwordMatchValidator]]
+      confirmedPassword: ['', [this.passwordMatchValidator]],
+      personalDataConsent: [null]
     });
+    this.maxDate = new Date();
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   onSubmit() {
@@ -27,19 +32,6 @@ export class SignupComponent implements OnInit {
       console.log(this.signUpForm.value);
     }
   }
-
-  // private emailValidator(control: FormControl): ValidationErrors | null {
-  //   if (control.value) {
-  //     const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-  //     if (!reg.test(control.value)) {
-  //       return { invalidEmail: true }
-  //     } else {
-  //       return null;
-  //     }
-  //   }
-  //   return null;
-  // }
 
   private passwordMatchValidator(control: FormControl): ValidationErrors | null {
     if (control.value) {
