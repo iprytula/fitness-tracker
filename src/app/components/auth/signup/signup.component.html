@@ -1,8 +1,8 @@
-<section>
+<section class="signup">
   <div class="mx-auto mt-5 px-3 form-container">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Sign Up</mat-card-title>
+        <mat-card-title>SignUp</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <form #f="ngForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
@@ -14,6 +14,7 @@
                 matInput
                 placeholder="pat@example.com"
                 required
+                email
               />
               <mat-error *ngIf="signUpForm.get('email')?.errors?.required">This field is required</mat-error>
               <mat-error *ngIf="signUpForm.get('email')?.errors?.email">Please enter a valid email adress</mat-error>
