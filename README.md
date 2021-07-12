@@ -1,4 +1,5 @@
-# FitnessTracker
+# JPfit
+I made this project just for fun and to learn new tools like Material, NgRx and Angularfire.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
 

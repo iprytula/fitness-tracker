@@ -1,17 +1,17 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
     <nav class="sidenav-navigation">
-      <ul class="sidenav-navigation--list d-flex flex-column ps-0 mt-3">
-        <li class="sidenav-navigation--item">
+      <mat-nav-list class="sidenav-navigation--list d-flex flex-column ps-0 mt-3">
+        <mat-list-item class="sidenav-navigation--item">
           <a class="router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
-        </li>
-        <li class="sidenav-navigation--item">
+        </mat-list-item>
+        <mat-list-item class="sidenav-navigation--item">
           <a class="router-link" routerLinkActive="active" routerLink="/login">Login</a>
-        </li>
-        <li class="sidenav-navigation--item">
+        </mat-list-item>
+        <mat-list-item class="sidenav-navigation--item">
           <a class="router-link" routerLinkActive="active" routerLink="/training">Training</a>
-        </li>
-      </ul>
+        </mat-list-item>
+      </mat-nav-list>
     </nav>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,19 +25,19 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <a routerLink="/" class="logo">PRYTULAfit</a>
+      <a routerLink="/" class="logo">JPfit</a>
       <nav class="main-navigation ms-auto d-none d-md-block">
-        <ul class="main-navigation--list d-flex align-items-center m-0">
-          <li class="main-navigation--item">
+        <mat-nav-list class="main-navigation--list d-flex align-items-center m-0">
+          <mat-list-item class="main-navigation--item">
             <a class="router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
-          </li>
-          <li class="sidenav-navigation--item">
+          </mat-list-item>
+          <mat-list-item class="sidenav-navigation--item">
             <a class="router-link" routerLinkActive="active" routerLink="/login">Login</a>
-          </li>
-          <li class="sidenav-navigation--item">
+          </mat-list-item>
+          <mat-list-item class="sidenav-navigation--item">
             <a class="router-link" routerLinkActive="active" routerLink="/training">Training</a>
-          </li>
-        </ul>
+          </mat-list-item>
+        </mat-nav-list>
       </nav>
     </mat-toolbar>
     <main class="main-content pb-5">
