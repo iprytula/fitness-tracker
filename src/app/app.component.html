@@ -1,45 +1,9 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
-    <nav class="sidenav-navigation">
-      <mat-nav-list class="sidenav-navigation--list d-flex flex-column ps-0 mt-3">
-        <mat-list-item class="sidenav-navigation--item">
-          <a class="router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
-        </mat-list-item>
-        <mat-list-item class="sidenav-navigation--item">
-          <a class="router-link" routerLinkActive="active" routerLink="/login">Login</a>
-        </mat-list-item>
-        <mat-list-item class="sidenav-navigation--item">
-          <a class="router-link" routerLinkActive="active" routerLink="/training">Training</a>
-        </mat-list-item>
-      </mat-nav-list>
-    </nav>
+    <app-sidenav-navigation (sidenavClose)="sidenav.close()"></app-sidenav-navigation>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <div class="toggle-sidenav d-block d-md-none">
-        <button
-          mat-icon-button
-          aria-label="Menu"
-          (click)="sidenav.toggle()"
-        >
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
-      <a routerLink="/" class="logo">JPfit</a>
-      <nav class="main-navigation ms-auto d-none d-md-block">
-        <mat-nav-list class="main-navigation--list d-flex align-items-center m-0">
-          <mat-list-item class="main-navigation--item">
-            <a class="router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
-          </mat-list-item>
-          <mat-list-item class="sidenav-navigation--item">
-            <a class="router-link" routerLinkActive="active" routerLink="/login">Login</a>
-          </mat-list-item>
-          <mat-list-item class="sidenav-navigation--item">
-            <a class="router-link" routerLinkActive="active" routerLink="/training">Training</a>
-          </mat-list-item>
-        </mat-nav-list>
-      </nav>
-    </mat-toolbar>
+    <app-header-navigation (sidenavToggle)="sidenav.toggle()"></app-header-navigation>
     <main class="main-content pb-5">
       <router-outlet></router-outlet>
     </main>

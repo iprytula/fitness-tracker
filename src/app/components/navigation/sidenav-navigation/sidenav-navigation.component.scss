@@ -1,0 +1,25 @@
+.sidenav-navigation {
+  &--router-link {
+    color: #8a8a8a;
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 5px;
+    }
+
+    &.active {
+      color: #3348a7;
+    }
+  }
+
+  &--logout-btn {
+    color: #8a8a8a;
+
+    ::ng-deep .mat-button-focus-overlay {
+      display: none;
+    }
+  }
+}

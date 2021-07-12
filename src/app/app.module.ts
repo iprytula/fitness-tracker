@@ -14,6 +14,8 @@ import { PastTrainingsComponent } from './components/training/past-trainings/pas
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SidenavNavigationComponent } from './components/navigation/sidenav-navigation/sidenav-navigation.component';
+import { HeaderNavigationComponent } from './components/navigation/header-navigation/header-navigation.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     NewTrainingComponent,
     PastTrainingsComponent,
     WelcomeComponent,
+    SidenavNavigationComponent,
+    HeaderNavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -5,33 +5,3 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 mat-sidenav {
   min-width: 200px;
 }
-
-.logo {
-  color: #fff;
-  text-decoration: none;
-}
-
-.main-navigation--list {
-  padding-top: 0;
-
-  .router-link {
-    color: #fff;
-
-    &.active {
-      color: #b8b8b8;
-    }
-  }
-}
-
-.sidenav-navigation--list {
-
-  .router-link {
-    color: rgb(138, 138, 138);
-    display: inline-block;
-    width: 100%;
-
-    &.active {
-      color: #3348a7;
-    }
-  }
-}

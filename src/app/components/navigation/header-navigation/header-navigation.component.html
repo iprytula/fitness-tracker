@@ -1,0 +1,27 @@
+<header>
+  <mat-toolbar color="primary">
+    <div class="toggle-sidenav d-block d-md-none">
+      <button
+        mat-icon-button
+        aria-label="Menu"
+        (click)="onToggleSidenav()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <a routerLink="/" class="logo">JPfit</a>
+    <nav class="main-navigation ms-auto d-none d-md-block">
+      <mat-nav-list class="main-navigation--list d-flex align-items-center m-0">
+        <mat-list-item class="main-navigation--item">
+          <a class="main-navigation--router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
+        </mat-list-item>
+        <mat-list-item class="main-navigation--item">
+          <a class="main-navigation--router-link" routerLinkActive="active" routerLink="/login">Login</a>
+        </mat-list-item>
+        <mat-list-item class="main-navigation--item">
+          <a class="main-navigation--router-link" routerLinkActive="active" routerLink="/training">Training</a>
+        </mat-list-item>
+      </mat-nav-list>
+    </nav>
+  </mat-toolbar>
+</header>
