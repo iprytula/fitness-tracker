@@ -1,0 +1,45 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100vh;
+}
+
+mat-sidenav {
+  min-width: 200px;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-navigation--list {
+  list-style: none;
+
+  .router-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+
+    &.active {
+      color: #b8b8b8;
+    }
+  }
+}
+
+.sidenav-navigation--list {
+  list-style: none;
+
+  .router-link {
+    color: rgb(138, 138, 138);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display: inline-block;
+
+    &.active {
+      color: #3348a7;
+    }
+  }
+}
