@@ -1,4 +1,4 @@
-<header>
+<header class="shadow">
   <mat-toolbar color="primary">
     <div class="toggle-sidenav d-block d-md-none">
       <button
@@ -11,17 +11,17 @@
     </div>
     <a routerLink="/" class="logo">JPfit</a>
     <nav class="main-navigation ms-auto d-none d-md-block">
-      <mat-nav-list class="main-navigation--list d-flex align-items-center m-0">
-        <mat-list-item class="main-navigation--item">
-          <a class="main-navigation--router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
-        </mat-list-item>
-        <mat-list-item class="main-navigation--item">
-          <a class="main-navigation--router-link" routerLinkActive="active" routerLink="/login">Login</a>
-        </mat-list-item>
-        <mat-list-item class="main-navigation--item">
-          <a class="main-navigation--router-link" routerLinkActive="active" routerLink="/training">Training</a>
-        </mat-list-item>
-      </mat-nav-list>
+      <ul class="main-navigation--list d-flex align-items-center m-0">
+        <li class="main-navigation--item">
+          <a mat-button class="main-navigation--router-link" routerLinkActive="active" routerLink="/signup">Signup</a>
+        </li>
+        <li class="main-navigation--item">
+          <a mat-button class="main-navigation--router-link" routerLinkActive="active" routerLink="/login">Login</a>
+        </li>
+        <li class="main-navigation--item">
+          <a mat-button class="main-navigation--router-link" routerLinkActive="active" routerLink="/training">Training</a>
+        </li>
+      </ul>
     </nav>
   </mat-toolbar>
 </header>
