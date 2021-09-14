@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AuthService } from "../../../services/auth-service.service";
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors,
 export class SignupComponent implements OnInit {
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService
   ) { }
 
   signUpForm!: FormGroup;
@@ -20,7 +22,7 @@ export class SignupComponent implements OnInit {
       email: [''],
       birthDate: [null],
       password: ['', [Validators.minLength(6)]],
-      confirmedPassword: ['', [this.passwordMatchValidator]],
+      confirmedPassword: ['', [SignupComponent.passwordMatchValidator]],
       personalDataConsent: [null]
     });
     this.maxDate = new Date();
@@ -29,19 +31,22 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if (this.signUpForm.valid) {
-      console.log(this.signUpForm.value);
+      this.authService.registerUser({
+        email: this.signUpForm.value['email'],
+        password: this.signUpForm.value['password']
+      });
     }
   }
 
-  private passwordMatchValidator(control: FormControl): ValidationErrors | null {
+  private static passwordMatchValidator(control: FormControl): ValidationErrors | null {
     if (control.value) {
       if (control.parent?.get('password')?.value !== control.value) {
-        return { passNotMutch: true }
+        return { passNotMuch: true }
       } else {
         return null
       }
     }
-    return null;
+    return null
   }
 
 }

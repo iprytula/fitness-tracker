@@ -1,24 +1,24 @@
 <nav class="sidenav-navigation">
   <mat-nav-list class="sidenav-navigation--list d-flex flex-column ps-0 mt-3">
-    <mat-list-item class="sidenav-navigation--item">
-      <button class="sidenav-navigation--logout-btn" mat-icon-button (click)="onSidenavClose()">
+    <mat-list-item *ngIf="isAuth" class="sidenav-navigation--item">
+      <button class="sidenav-navigation--logout-btn" mat-icon-button (click)="logout()">
         <mat-icon>logout</mat-icon>
         <span>Logout</span>
       </button>
     </mat-list-item>
-    <mat-list-item class="sidenav-navigation--item">
+    <mat-list-item *ngIf="!isAuth" class="sidenav-navigation--item">
       <a class="sidenav-navigation--router-link" routerLinkActive="active" routerLink="/login" (click)="onSidenavClose()">
         <mat-icon>login</mat-icon>
         <span class="ms-1">Login</span>
       </a>
     </mat-list-item>
-    <mat-list-item class="sidenav-navigation--item">
+    <mat-list-item *ngIf="!isAuth" class="sidenav-navigation--item">
       <a class="sidenav-navigation--router-link" routerLinkActive="active" routerLink="/signup" (click)="onSidenavClose()">
         <mat-icon>person</mat-icon>
         <span class="ms-1">Signup</span>
       </a>
     </mat-list-item>
-    <mat-list-item class="sidenav-navigation--item">
+    <mat-list-item *ngIf="isAuth" class="sidenav-navigation--item">
       <a class="sidenav-navigation--router-link" routerLinkActive="active" routerLink="/training" (click)="onSidenavClose()">
         <mat-icon>fitness_center</mat-icon>
         <span class="ms-1">Training</span>

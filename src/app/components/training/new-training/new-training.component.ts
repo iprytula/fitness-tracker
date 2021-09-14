@@ -14,7 +14,7 @@ export class NewTrainingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onStartTrainig() {
+  onStartTraining() {
     this.startTraining.emit();
   }
 
