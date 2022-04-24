@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
       });
 
       console.log(this.authService.getUser());
-      this.router.navigate(['/']);
     }
   }
 
